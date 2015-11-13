@@ -1,0 +1,9 @@
+applications:
+  - host: scala_server
+    name: scala_server
+    buildpack: java_buildpack
+    path: ./target/universal/candid-1.0.zip
+    instances: 1
+    memory: 512M
+    env:
+      MY_VAR: random_variable
