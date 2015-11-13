@@ -16,7 +16,7 @@ This *tutorial* will walk you through creating a simple web app in Scala leverag
 
 Here will do a quick run of what is fully described in the "Getting Started" section of the Play Framework documentation (the link is provided at the end of the post in case you want extra details). 
 
-First, let's create a quick project structure as described below. If you are using an IDE when it will probably do this for your when  creating an SBT project. For convinience this [shell script]() is provided in case you are creating the directories the old way.
+First, let's create a quick project structure as described below. If you are using an IDE when it will probably do this for your when  creating an SBT project. For convinience this [shell script](https://github.com/jorgep19/blog/blob/master/RunScalaOnBluemix/setup.sh) is provided in case you are creating the directories the old way.
 
 ```
 /
