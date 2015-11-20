@@ -2,19 +2,19 @@
 
 [Scala](http://www.scala-lang.org/) is a very interesting programming language that provides an elegant mix of Object Oriented and Functional ideas. It was designed to be a *Scalable Language* which makes it great for web. Its currently being used in the back-end of very popular applications like *Twitter* and *Linkedin*. 
 
-This *tutorial* will walk you through creating a simple web app in Scala leveraging the [Play Framewok](https://www.playframework.com/) and how to host it on [IBM Bluemix](https://console.ng.bluemix.net/). No experience wiuth this technologies is needed to complete this tutorial but is writtent with the hopes to motivate you explore further (links at the end).
+This *tutorial* will walk you through creating a simple web app in Scala leveraging the [Play Framewok](https://www.playframework.com/) and how to host it on [IBM Bluemix](https://console.ng.bluemix.net/). No experience wiuth this technologies is needed to complete this tutorial but is written with the hopes to motivate you to explore further (links at the end).
 
 ## Setup 
 
 1. Install the [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-2. Install [SBT](http://www.scala-sbt.org/download.html) from their site of if you a [Homebrew](http://brew.sh/) user you can do `brew install sbt`. *SBT* is a buil tool for Scala and Java projects
-3. Install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli) (Command Line Interface): this command line tool enable use to intercat with IBM Bluemix from our terminal.
+2. Install [SBT](http://www.scala-sbt.org/download.html) from their site or if you are a [Homebrew](http://brew.sh/) user you can do `brew install sbt`. *SBT* is a build tool for Scala and Java projects
+3. Install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli) (Command Line Interface): this command line tool enable use to interact with IBM Bluemix from your terminal.
 4. If desired setup your prefered code editor or IDE for scala development.
 
 
 ## Implement a Web Server using Play 
 
-Here will do a quick run of what is fully described in the "Getting Started" section of the Play Framework documentation (the link is provided at the end of the post in case you want extra details). 
+Here we'll do a quick run of what is fully described in the "Getting Started" section of the Play Framework documentation (the link is provided at the end of the post in case you want extra details). 
 
 First, let's create a quick project structure as described below. If you are using an IDE when it will probably do this for your when  creating an SBT project. For convinience this [shell script](https://github.com/jorgep19/blog/blob/master/RunScalaOnBluemix/setup.sh) is provided in case you are creating the directories the old way.
 
