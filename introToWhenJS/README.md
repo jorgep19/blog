@@ -2,14 +2,14 @@
 
 ## What is a promise? 
 
-Let's define promises as a design pattern used to simplify asynchronous code. Promises are also know as futures or delays. You can see full details of the promise pattern on the [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or [Wikipedia](https://en.wikipedia.org/wiki/Futures_and_promises) but the simple explanation is that your operations/functions return a promise object which in essence a placeholder for the actual result that is being computed asynchronously. Promise objects provide two important APIs: 
+Let's define promises as a design pattern used to simplify asynchronous code. Promises are also known as futures or delays. You can see full details of the promise pattern on the [Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) or [Wikipedia](https://en.wikipedia.org/wiki/Futures_and_promises); but the simple explanation is that your operations/functions return a promise object which in essence a placeholder for the actual result that is being computed asynchronously. Promise objects provide two important APIs: 
 
 1. `.then(func)`: this sets the function to be executed when the promises is fufilled. *func* expects one parameter which is the value being computed asynchronously.
 2. `.catch(func)` or `otherwise(func)`: this sets the function to be executed when an error happens while trying to fulfill the promise. *func* in this case is a function expects one parameter, the error that occurred.
 
 ## Promises with When.JS
 
-When using When.JS you actually work with *deferred* objects which provide a promise as well as resolution methods. Let's write a simple asynchronous using callbacks and rewrite it returning a promise. One thing  worth noticing is that the code below is provided for compare and constrast we will highlight the benefits of promises later. 
+When using When.JS you actually work with *deferred* objects which provide a promise as well as resolution methods. Let's write a simple asynchronous using callbacks and rewrite it returning a promise. One thing  worth noticing is that the code below is provided to compare and constrast, we will highlight the benefits of promises later. 
 
 Callback form:
 
@@ -55,7 +55,7 @@ asyncRandomNumber()
 
 ## Promises Chainning
 
-When creating a complex application you would probably run into an scenario that requires multiple asynchronous operations to occur sequentially. For example do a read from the database use that data to do some computation on memory and then save the results to the database. When working with callbacks this will require nesting callback which not only makes your code base a pain to maintain but also makes _"eating errors"_ fairly easy. Promises solve this problem by the use of _chaining_. `.then(func)` returns a promise of the value returned by _func_, if _func_ returns a promise it will return `.then(func)` will return the same promise. We can leverage this to achieve our sequential example with code shown below: 
+When creating a complex application you would probably run into an scenario that requires multiple asynchronous operations to occur sequentially. For example one needs to do a read from the database, use that data fetched to do some computation, and then save the results to the database. When working with callbacks this will require nesting callback which not only makes your code base a pain to maintain but also makes _"eating errors"_ fairly easy. Promises solve this problem by the use of _chaining_. `.then(func)` returns a promise of the value returned by _func_, if _func_ returns a promise it will return `.then(func)` will return the same promise. We can leverage this to achieve our sequential example with code shown below: 
 
 ```
 // readFromDB asynchronously fetches data from the database and returns a promise
@@ -75,7 +75,7 @@ readFromDB(query)
 
 ## Error Handling
 
-One thing you will notice immediately in our previous example is that we completly ignore error handling. In a real world scenario we wouldn't take a database operation. To notify an error our asynchrounous functions can call `deferred.reject(new Error())` at any point of their execution. If `.reject(err)` is called then function passed to `promise.otherwise(func)` will be executed. While `.otherwise(func)` is attribute of a single promise object you can actually leverage the same error handler for a whole promise chain. This is great because it makes it harder to _eat errors_ and because simplifies the implementation of in memory transactions. Now lets add error handlign to our previous example while comparing it to a try/catch syntax.
+One thing you will notice immediately in our previous example is that we completly ignore error handling. In a real world scenario we wouldn't take a database operation. To notify an error our asynchrounous functions can call `deferred.reject(new Error())` at any point of their execution. If `.reject(err)` is called, then function passed to `promise.otherwise(func)` will be executed. While `.otherwise(func)` is attribute of a single promise object, you can actually leverage the same error handler for a whole promise chain. This is great because it makes it harder to _eat errors_ and because simplifies the implementation of in memory transactions. Now lets add error handlign to our previous example while comparing it to a try/catch syntax.
 
 ```
 readFromDB(query)
