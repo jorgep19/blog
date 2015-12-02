@@ -44,6 +44,7 @@ sbt.version = <b>0.13.8</b>
 </pre>
 
 * `/project/plugins.sbt`: this file allows us to provide our SBT process with plugins. The two bolded lines in the file specify the repository where SBT can get the *Play Framework* plugin and then it adds it to our build process.  
+
 <pre>
 logLevel := Level.Warn
 
